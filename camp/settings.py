@@ -27,10 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['192.168.0.112']
 
-
 # Application definition
 
 INSTALLED_APPS = [
+    'spotreserve.apps.SpotreserveConfig',
     'membersdata.apps.MembersdataConfig',
     'django.contrib.admin',
     'django.contrib.auth',

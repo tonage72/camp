@@ -17,7 +17,7 @@ class Member(models.Model):
     member_type = models.CharField('Member Type', max_length=20, null=True, blank=True)
     member_duespaid = models.DateField('Dues Paid Date', auto_now=False, auto_now_add=False, null=True, blank=True)
     member_DL = models.CharField('DL', max_length=20, null=True, blank=True)
-    member_Volunteer_Interests = models.CharField('Volunteer Interests', max_length=40, null=True, blank=True)
+    member_volunteer_interests = models.CharField('Volunteer Interests', max_length=40, null=True, blank=True)
     member_phone = models.CharField('Home Phone', max_length=15, null=True, blank=True)
     member_cell_phone = models.CharField('Cell Phone', max_length=15, null=True, blank=True)
     member_address_street = models.CharField('Street Address', max_length=100, null=True, blank=True)
@@ -45,4 +45,4 @@ class Member(models.Model):
     member_notes = models.CharField('Notes', max_length=100, null=True, blank=True)
 
     def __str__(self):
-        return f'{self.member_first_name} {self.member_last_name}'
+        return f'{self.member_first_name}'

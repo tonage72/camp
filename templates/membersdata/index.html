@@ -1,9 +1,44 @@
-{% if first_two_members %}
-    <ul>
-    {% for member in first_two_members %}
-        <li><a href="/membersdata/{{ member.member_first_name }}/">{{ member.member_first_name }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>No members are available.</p>
-{% endif %}
+{% extends "membersdata/base_site.html" %}
+
+{% comment %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'membersdata/style.css' %}">
+{% endcomment %}
+
+{% block content %}
+    {% if member_objects %}
+        
+        {% for member in member_objects %}
+            {% comment %} <li><a href="/membersdata/{{ member.member_last_name }}/">{{ member.member_last_name }}</a></li> {% endcomment %}
+            <p>
+                {{ member.member_first_name }}<br>
+                {{ member.member_secondary_first_name }}<br>
+                {{ member.member_last_name }}<br>
+                {{ member.member_child1_name }}<br>
+                {{ member.member_child2_name }}<br>
+                {{ member.member_child3_name }}<br>
+                {{ member.member_child4_name }}<br>
+                {{ member.member_child5_name }}<br>
+                {{ member.member_child6_name }}<br>
+                {{ member.member_child7_name }}<br>
+                {{ member.member_child8_name }}<br>
+                {{ member.member_type }}<br>
+                {{ member.member_duespaid }}<br>
+                {{ member.member_DL }}<br>
+                {{ member.member_volunteer_interests }}<br>
+                {{ member.member_phone }}<br>
+                {{ member.member_cell_phone }}<br>
+                {{ member.member_address_street }}<br>
+                {{ member.member_address_city }}<br>
+                {{ member.member_address_state }}<br>
+                {{ member.member_address_zip }}<br>
+                {{ member.member_email }}<br>
+                {{ member.member_fax }}<br>
+                {{ member.member_notes }}<br>
+            </p>
+        {% endfor %}
+        
+    {% else %}
+        <p>No members are available.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "spotreserve/base_site.html" %}
+
+{% comment %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'membersdata/style.css' %}">
+{% endcomment %}
+
+{% block content %}
+    {% if spot_objects %}
+        {% for spot in spot_objects %}
+            <p>
+                Spot {{ spot.spot_identification }}<br>
+                Availability: {{ spot.spot_res_status }}<br>
+                {{ spot.spot_identification }}
+                {% comment %} <a href="{% url 'spotdetailurl' spot_identification %}">Select this spot</a><br> {% endcomment %}
+                <a href="{{ spot.spot_identification }}/spotdetail/">Select this spot</a><br>
+                <br>
+            <p>
+        {% endfor %}
+    {% else %}
+        <p>No spot info in database.</p>
+    {% endif %}
+
+{% endblock %}

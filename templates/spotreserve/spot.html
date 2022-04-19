@@ -1,0 +1,15 @@
+{% extends "spotreserve/base_site.html" %}
+
+{% comment %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'membersdata/style.css' %}">
+{% endcomment %}
+
+{% block content %}
+            <p>
+                this is spot details html
+                {% comment %} Spot {{ spot.spot_identification }}<br>
+                Availability: {{ spot.spot_res_status }}<br> {% endcomment %}
+                <br>
+            <p>
+{% endblock %}
